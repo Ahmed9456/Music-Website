@@ -1,0 +1,16 @@
+{% extends 'music/base.html' %}
+
+
+<!--{% block body %}-->
+    <!--{% if error_message %}-->
+       <!--<p><strong> {{ error_message }}</strong></p>-->
+    <!--{% endif %}-->
+    <H1> Here is the list of my albums</H1>
+        <ul>
+            {% for album in object_list %}
+            <!--Here all_albums is a collection of objects and album impersonates each object in all_albums. This is why album.id and album.album_title make sense-->
+            <li><a href ="{% url 'music:details' album.id %}"> {{ album.album_title }}</a></li>
+            {% endfor %}
+        </ul>
+
+{% endblock %}
